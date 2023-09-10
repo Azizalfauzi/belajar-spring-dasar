@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import zuhaprogrammer.spring.core.data.Bar;
 import zuhaprogrammer.spring.core.data.Foo;
 
 public class ScopeTest {
@@ -24,5 +25,16 @@ public class ScopeTest {
         Assertions.assertNotSame(foo1, foo2);
         Assertions.assertNotSame(foo1, foo3);
         Assertions.assertNotSame(foo2, foo3);
+    }
+
+    @Test
+    void doubleTonScope() {
+        Bar bar1 = applicationContext.getBean(Bar.class);
+        Bar bar2 = applicationContext.getBean(Bar.class);
+        Bar bar3 = applicationContext.getBean(Bar.class);
+        Bar bar4 = applicationContext.getBean(Bar.class);
+
+        Assertions.assertSame(bar1, bar3);
+        Assertions.assertSame(bar2, bar4);
     }
 }
