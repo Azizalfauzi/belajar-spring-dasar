@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import zuhaprogrammer.spring.core.data.Foo;
 
 public class DependsOnTest {
 
@@ -15,7 +16,7 @@ public class DependsOnTest {
     }
 
     @Test
-    void testDependsOn(){
-
+    void testDependsOn() {
+        Foo foo = applicationContext.getBean(Foo.class);
     }
 }
