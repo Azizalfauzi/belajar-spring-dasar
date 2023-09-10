@@ -5,6 +5,6 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class CyclicA {
-    private CyclicB cyclicB;
+public class CyclicC {
+    private CyclicA cyclicA;
 }
