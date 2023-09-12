@@ -5,7 +5,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import zuhaprogrammer.spring.core.repository.CategoryRepository;
 import zuhaprogrammer.spring.core.repository.ProductRepository;
+import zuhaprogrammer.spring.core.service.CategoryService;
 import zuhaprogrammer.spring.core.service.ProductService;
 
 public class ComponentTest {
@@ -30,5 +32,13 @@ public class ComponentTest {
         ProductRepository productRepository = configurableApplicationContext.getBean(ProductRepository.class);
 
         Assertions.assertSame(productRepository, productService.getProductRepository());
+    }
+
+    @Test
+    void testSetterDependencyInjecttion() {
+        CategoryService categoryService = configurableApplicationContext.getBean(CategoryService.class);
+        CategoryRepository categoryRepository = configurableApplicationContext.getBean(CategoryRepository.class);
+
+        Assertions.assertSame(categoryRepository, categoryService.getCategoryRepository());
     }
 }
