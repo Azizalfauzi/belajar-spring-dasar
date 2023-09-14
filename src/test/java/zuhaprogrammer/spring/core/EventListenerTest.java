@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import zuhaprogrammer.spring.core.listener.LoginAgainSuccessListener;
 import zuhaprogrammer.spring.core.listener.LoginSuccessListener;
+import zuhaprogrammer.spring.core.listener.UserListener;
 import zuhaprogrammer.spring.core.service.UserService;
 
 public class EventListenerTest {
@@ -16,7 +17,8 @@ public class EventListenerTest {
     @Import({
             UserService.class,
             LoginSuccessListener.class,
-            LoginAgainSuccessListener.class
+            LoginAgainSuccessListener.class,
+            UserListener.class
     })
     public static class TestConfiguration {
 
