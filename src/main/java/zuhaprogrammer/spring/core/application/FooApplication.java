@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
+import zuhaprogrammer.spring.core.data.Bar;
 import zuhaprogrammer.spring.core.data.Foo;
 
 @SpringBootApplication
