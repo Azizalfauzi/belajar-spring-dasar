@@ -8,6 +8,9 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import zuhaprogrammer.spring.core.data.Bar;
 import zuhaprogrammer.spring.core.data.Foo;
+import zuhaprogrammer.spring.core.listener.AppStartingListener;
+
+import java.util.List;
 
 @SpringBootApplication
 public class FooApplication {
@@ -26,6 +29,8 @@ public class FooApplication {
         SpringApplication application = new SpringApplication(FooApplication.class);
 
         application.setBannerMode(Banner.Mode.CONSOLE);
+
+        application.setListeners(List.of(new AppStartingListener()));
 
         ConfigurableApplicationContext applicationContext = application.run(args);
 
